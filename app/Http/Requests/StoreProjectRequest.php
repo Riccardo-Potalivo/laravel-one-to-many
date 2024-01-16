@@ -26,8 +26,8 @@ class StoreProjectRequest extends FormRequest
             'name' => 'required|max:200|unique:projects',
             'description' => 'nullable',
             'repository' => 'required|url|max:255',
-            'image' => 'nullable|mimes:jpg,png|max:1000'
-
+            'image' => 'nullable|mimes:jpg,png|max:1000',
+            'type_id' => 'required'
         ];
     }
 
@@ -42,7 +42,8 @@ class StoreProjectRequest extends FormRequest
             'name.unique' => 'Esiste già una reporitory con lo stesso nome',
             'repository.url' => 'il link della rapository deve essere di tipo url',
             'image.mimes' => 'il file deve essere di tipo .jpg o .png',
-            'image.max' => 'il file può pesare massimo :max Mb'
+            'image.max' => 'il file può pesare massimo :max Mb',
+            'type_id' => 'Seleziona il campo type'
         ];
 
     }

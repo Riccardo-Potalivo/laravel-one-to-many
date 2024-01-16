@@ -26,6 +26,21 @@
             </div>
 
             <div class="mb-3">
+                <label for="type_id">Select type</label>
+                <select class="form-control @error('type_id') is-invalid @enderror" name="type_id" id="type_id">
+                    <option value="">Select a type</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}"
+                            {{ old('type_id', $project->type_id) == $type->id ? 'selected' : '' }}>{{ $type->name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('type_id')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
                 <label for="repository">Repository</label>
                 <input type="url" class="form-control @error('repository') is-invalid @enderror" name="repository"
                     id="repository" maxlength="255" value="{{ old('repository', $project->repository) }}">
