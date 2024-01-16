@@ -1,5 +1,19 @@
 <?php
 return [
+    'types' => [
+        [
+            "name" => "Public",
+        ],
+        [
+            "name" => "Public template",
+        ],
+        [
+            "name" => "Private",
+        ],
+        [
+            "name" => "Private template",
+        ]
+    ],
     'projects' => [
         [
             "name" => "html-css-spotifyweb",
