@@ -8,6 +8,6 @@
         <p>Type: {{ $project->type_id }}</p>
         <p>{{ $project->description }}</p>
         <p>{{ $project->repository }}</p>
-        <a href="{{ route('admin.projects.edit', $project->id) }}">edit</a>
+        <a href="{{ route('admin.projects.edit', $project->slug) }}">edit</a>
     </div>
 @endsection

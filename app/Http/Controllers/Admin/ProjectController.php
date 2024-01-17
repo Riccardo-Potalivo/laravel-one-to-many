@@ -51,7 +51,7 @@ class ProjectController extends Controller
         }
 
         $project = Project::create($formData);
-        return redirect()->route('admin.projects.show', $project->id);
+        return redirect()->route('admin.projects.show', $project->slug);
     }
 
     /**
@@ -93,7 +93,7 @@ class ProjectController extends Controller
         // dd($formData);
 
         $project->update($formData);
-        return redirect()->route('admin.projects.show', $project->id);
+        return redirect()->route('admin.projects.show', $project->slug);
     }
 
     /**
@@ -102,7 +102,7 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return to_route('admin.post.index')->with('message', "$project->title eliminato con successo");
+        return to_route('admin.projects.index')->with('message', "$project->title eliminato con successo");
 
     }
 }
